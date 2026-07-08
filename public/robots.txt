@@ -1,0 +1,4 @@
+User-agent: *
+     Allow: /
+
+     Sitemap: https://studyai10.vercel.app/sitemap.xml
