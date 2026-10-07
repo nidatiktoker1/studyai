@@ -1,12 +1,9 @@
 import { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Services from './pages/Services'
-import Demos from './pages/Demos'
-import Pricing from './pages/Pricing'
 import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
 
@@ -19,12 +16,9 @@ const pageVariants = {
 
 const SITE = 'https://studyai10.vercel.app'
 const SEO = {
-  '/': { title: 'StudyAI — Convert YouTube Videos & PDFs Into Flashcards, Mind Maps & Study Materials', description: 'Turn any YouTube video, PDF, podcast or article into flashcards, mind maps, quizzes, audio summaries and study guides in 24 hours. Starting at $49.' },
-  '/services': { title: 'Services — Flashcards, Mind Maps, Quizzes & More | StudyAI', description: '10 study material formats from your YouTube videos, PDFs and articles: flashcard decks, mind maps, study guides, quizzes, audio summaries, slides and infographics.' },
-  '/demos': { title: 'Demos — See Study Materials Made From Real Content | StudyAI', description: 'Real examples: YouTube lectures turned into 50 flashcards, articles into mind maps, courses into full study guides with quizzes and glossaries.' },
-  '/pricing': { title: 'Pricing — Study Material Creation From $49 | StudyAI', description: 'Simple pricing: single formats from $49, Starter Pack $99, Creator Pack $149, Complete Pack $199. All 10 formats from one source, delivered in 24 hours.' },
-  '/faq': { title: 'FAQ — How StudyAI Works, Delivery & Payment | StudyAI', description: 'How long delivery takes, what file formats you receive, how to send your content and how to pay for StudyAI study material creation.' },
-  '/contact': { title: 'Contact & Order — StudyAI', description: 'Send your YouTube link, PDF or article and get flashcards, mind maps, quizzes or a study guide within 24 hours. Order StudyAI on WhatsApp.' },
+  '/': { title: 'StudyAI — Study Smarter: Active Recall, Spaced Repetition, Flashcards & Note-Taking Guides', description: 'Free science-backed study guides: active recall, spaced repetition, the Feynman technique, Cornell notes and how to make flashcards that actually work.' },
+  '/faq': { title: 'FAQ — Study Techniques, Flashcards & Note-Taking | StudyAI', description: 'Answers on active recall, spaced repetition, flashcard design, the Feynman technique and Cornell notes, plus what StudyAI publishes now.' },
+  '/contact': { title: 'Write for Us & Contact — StudyAI', description: 'Guest contributions on education, study skills and edtech, plus how to contact the StudyAI editorial team.' },
 }
 function useSeo(pathname) {
   useEffect(() => {
@@ -60,11 +54,9 @@ export default function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
-          <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
-          <Route path="/demos" element={<PageWrapper><Demos /></PageWrapper>} />
-          <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
           <Route path="/faq" element={<PageWrapper><FAQ /></PageWrapper>} />
           <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnimatePresence>
       <Footer />

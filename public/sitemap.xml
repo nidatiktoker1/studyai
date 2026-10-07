@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://studyai10.vercel.app/</loc>
-  </url>
-  <url>
-    <loc>https://studyai10.vercel.app/pricing</loc>
-  </url>
-  <url>
-    <loc>https://studyai10.vercel.app/services</loc>
-  </url>
-  <url>
-    <loc>https://studyai10.vercel.app/faq</loc>
-  </url>
-  <url>
-    <loc>https://studyai10.vercel.app/contact</loc>
-  </url>
-  <url>
-    <loc>https://studyai10.vercel.app/demos</loc>
-  </url>
+  <url><loc>https://studyai10.vercel.app/</loc></url>
+  <url><loc>https://studyai10.vercel.app/blog/</loc></url>
+  <url><loc>https://studyai10.vercel.app/blog/active-recall/</loc></url>
+  <url><loc>https://studyai10.vercel.app/blog/spaced-repetition/</loc></url>
+  <url><loc>https://studyai10.vercel.app/blog/how-to-make-flashcards/</loc></url>
+  <url><loc>https://studyai10.vercel.app/blog/feynman-technique/</loc></url>
+  <url><loc>https://studyai10.vercel.app/blog/cornell-notes/</loc></url>
+  <url><loc>https://studyai10.vercel.app/faq</loc></url>
+  <url><loc>https://studyai10.vercel.app/contact</loc></url>
 </urlset>

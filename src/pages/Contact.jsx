@@ -1,138 +1,62 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import TextField from '@mui/material/TextField'
-import MenuItem from '@mui/material/MenuItem'
-import InputAdornment from '@mui/material/InputAdornment'
-import EmailIcon from '@mui/icons-material/Email'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp'
-import { services, buildWhatsAppLink } from '../data'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0 },
-}
+const topics = [
+  'Study techniques and exam preparation (active recall, spaced repetition, revision strategies)',
+  'Note-taking methods and student productivity',
+  'AI tools for students and teachers — honest reviews and workflows',
+  'Online learning, courses and edtech platforms',
+  'Flashcards, quizzes and learning apps',
+  'Student life skills: focus, memory, time management',
+]
+
+const rules = [
+  'Original and unpublished — no spun or AI-mass-produced content',
+  '1,200+ words with real examples, steps or data, not generic advice',
+  'Written for students and teachers first; promotional content is not accepted',
+  'A maximum of one contextual link to a genuinely relevant resource',
+]
 
 export default function Contact() {
-  const [content, setContent] = useState('')
-  const [service, setService] = useState('')
-  const [instructions, setInstructions] = useState('')
-
-  const buildMessage = () => {
-    const msg = `Hi! I want to order study materials from StudyAI.\nService: ${service || '[choose service]'}\nMy content: ${content || '[link]'}\nSpecial instructions: ${instructions || 'none'}\nPlease send payment details.`
-    return buildWhatsAppLink(msg)
-  }
-
   return (
     <Box>
-      <Box sx={{ textAlign: 'center', py: { xs: 6, md: 10 } }}>
-        <Container maxWidth="lg">
-          <Typography variant="h1" sx={{ mb: 2, fontSize: { xs: '2.2rem', md: '3rem' } }}>
-            Order Your <span className="gradient-text">Study Materials</span>
+      <Container maxWidth="md" sx={{ py: { xs: 8, md: 12 } }}>
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <Typography variant="h1" align="center" sx={{ mb: 2, fontSize: { xs: '2.2rem', md: '3rem' } }}>
+            Write for <span className="gradient-text">StudyAI</span>
           </Typography>
-          <Typography variant="h6" color="text.secondary">
-            Fill in the details below and we will get back to you within 1 hour
+          <Typography variant="h6" align="center" color="text.secondary" sx={{ mb: 6, fontWeight: 400 }}>
+            StudyAI is now a free study-guides publication. We are preparing a guest contributor programme for writers who know learning, teaching and edtech from the inside.
           </Typography>
-        </Container>
-      </Box>
-
-      <Container maxWidth="md" sx={{ py: { xs: 4, md: 6 } }}>
-        <motion.div initial="hidden" animate="show" variants={fadeUp} transition={{ duration: 0.5 }}>
-          <Card sx={{ p: { xs: 3, md: 5 }, border: '1px solid', borderColor: 'rgba(108,99,255,0.15)' }}>
-            <Box sx={{ mb: 3 }}>
-              <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 700 }}>What is your content?</Typography>
-              <TextField
-                fullWidth
-                placeholder="YouTube link / PDF / Article URL"
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                variant="outlined"
-              />
-            </Box>
-            <Box sx={{ mb: 3 }}>
-              <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 700 }}>What format do you want?</Typography>
-              <TextField
-                select
-                fullWidth
-                value={service}
-                onChange={(e) => setService(e.target.value)}
-                variant="outlined"
-                placeholder="Choose a service"
-              >
-                <MenuItem value="" disabled>Select a service</MenuItem>
-                {services.map((s) => (
-                  <MenuItem key={s.id} value={s.name}>
-                    {s.emoji} {s.name} — ${s.price}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </Box>
-            <Box sx={{ mb: 4 }}>
-              <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 700 }}>Any special instructions?</Typography>
-              <TextField
-                fullWidth
-                multiline
-                rows={3}
-                placeholder="Tell us any specific requirements..."
-                value={instructions}
-                onChange={(e) => setInstructions(e.target.value)}
-                variant="outlined"
-              />
-            </Box>
-            <Button
-              variant="contained"
-              color="secondary"
-              size="large"
-              fullWidth
-              href={buildMessage()}
-              target="_blank"
-              rel="noopener"
-              startIcon={<WhatsAppIcon />}
-              sx={{ py: 1.5, fontSize: '1.05rem' }}
-            >
-              Send Order via WhatsApp →
-            </Button>
-          </Card>
         </motion.div>
-      </Container>
 
-      {/* INFO CARDS */}
-      <Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
-        <Grid container spacing={4}>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card sx={{ p: 3, textAlign: 'center', height: '100%', border: '1px solid', borderColor: 'rgba(108,99,255,0.15)' }}>
-              <Typography sx={{ fontSize: '2rem', mb: 1 }}>⏱️</Typography>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.5 }}>Response Time</Typography>
-              <Typography variant="body2" color="text.secondary">Within 1 hour</Typography>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card sx={{ p: 3, textAlign: 'center', height: '100%', border: '1px solid', borderColor: 'rgba(108,99,255,0.15)' }}>
-              <Typography sx={{ fontSize: '2rem', mb: 1 }}>📦</Typography>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.5 }}>Delivery Time</Typography>
-              <Typography variant="body2" color="text.secondary">Within 24 hours</Typography>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card sx={{ p: 3, textAlign: 'center', height: '100%', border: '1px solid', borderColor: 'rgba(108,99,255,0.15)' }}>
-              <Typography sx={{ fontSize: '2rem', mb: 1 }}>💳</Typography>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.5 }}>Payment</Typography>
-              <Typography variant="body2" color="text.secondary">Via Payoneer after confirmation</Typography>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card sx={{ p: 3, textAlign: 'center', height: '100%', border: '1px solid', borderColor: 'rgba(108,99,255,0.15)' }}>
-              <EmailIcon sx={{ fontSize: '2rem', mb: 1, color: 'primary.main' }} />
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.5 }}>Email</Typography>
-              <Typography variant="body2" color="text.secondary">hello@studyai.com</Typography>
-            </Card>
-          </Grid>
-        </Grid>
+        <Card sx={{ p: { xs: 3, md: 4 }, mb: 4, border: '1px solid', borderColor: 'rgba(108,99,255,0.15)' }}>
+          <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>Topics we will cover</Typography>
+          {topics.map((t) => (
+            <Typography key={t} color="text.secondary" sx={{ mb: 1 }}>• {t}</Typography>
+          ))}
+        </Card>
+
+        <Card sx={{ p: { xs: 3, md: 4 }, mb: 4, border: '1px solid', borderColor: 'rgba(108,99,255,0.15)' }}>
+          <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>Contributor guidelines</Typography>
+          {rules.map((t) => (
+            <Typography key={t} color="text.secondary" sx={{ mb: 1 }}>• {t}</Typography>
+          ))}
+          <Typography color="text.secondary" sx={{ mt: 3 }}>
+            The contributor programme opens shortly. Until then, the best way to see the standard we publish at is to read our guides.
+          </Typography>
+        </Card>
+
+        <Box sx={{ textAlign: 'center', mt: 6 }}>
+          <Button variant="contained" color="primary" size="large" component="a" href="/blog/" endIcon={<ArrowForwardIcon />}>
+            Read the Study Guides
+          </Button>
+        </Box>
       </Container>
     </Box>
   )

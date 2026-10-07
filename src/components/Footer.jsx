@@ -4,14 +4,10 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import SchoolIcon from '@mui/icons-material/School'
-import { PAYONEER_LINK } from '../data'
 
 const footerLinks = [
-  { label: 'Services', path: '/services' },
-  { label: 'Demos', path: '/demos' },
-  { label: 'Pricing', path: '/pricing' },
   { label: 'FAQ', path: '/faq' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Write for Us', path: '/contact' },
 ]
 
 export default function Footer() {
@@ -36,7 +32,7 @@ export default function Footer() {
               </Typography>
             </Box>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              Transform any content into powerful study materials
+              Free guides on study techniques that research actually supports
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Helping students and professionals learn smarter worldwide
@@ -58,25 +54,28 @@ export default function Footer() {
                   {link.label}
                 </Typography>
               ))}
+              <Typography component="a" href="/blog/" color="text.secondary" sx={{ textDecoration: 'none', '&:hover': { color: 'primary.main' }, fontSize: '0.9rem' }}>
+                Study Guides (Blog)
+              </Typography>
             </Box>
           </Grid>
           <Grid item xs={6} md={4}>
             <Typography variant="subtitle2" sx={{ mb: 2, fontWeight: 700 }}>
-              Payment
+              Popular Guides
             </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              We accept Payoneer
-            </Typography>
-            <Typography
-              component="a"
-              href={PAYONEER_LINK}
-              target="_blank"
-              rel="noopener"
-              color="primary.main"
-              sx={{ textDecoration: 'none', fontSize: '0.9rem', '&:hover': { textDecoration: 'underline' } }}
-            >
-              Pay via Payoneer →
-            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+              {[
+                { label: 'Active Recall', href: '/blog/active-recall/' },
+                { label: 'Spaced Repetition', href: '/blog/spaced-repetition/' },
+                { label: 'How to Make Flashcards', href: '/blog/how-to-make-flashcards/' },
+                { label: 'Feynman Technique', href: '/blog/feynman-technique/' },
+                { label: 'Cornell Notes', href: '/blog/cornell-notes/' },
+              ].map((g) => (
+                <Typography key={g.href} component="a" href={g.href} color="text.secondary" sx={{ textDecoration: 'none', '&:hover': { color: 'primary.main' }, fontSize: '0.9rem' }}>
+                  {g.label}
+                </Typography>
+              ))}
+            </Box>
           </Grid>
         </Grid>
         <Box sx={{ mt: 5, pt: 3, borderTop: '1px solid', borderColor: 'rgba(255,255,255,0.06)' }}>

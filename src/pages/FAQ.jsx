@@ -8,7 +8,7 @@ import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import { faqs, buildWhatsAppLink } from '../data'
+import { faqs } from '../data'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -63,17 +63,10 @@ export default function FAQ() {
 
       <Box sx={{ bgcolor: 'background.paper', py: { xs: 6, md: 8 }, textAlign: 'center' }}>
         <Container maxWidth="md">
-          <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>Still have questions?</Typography>
-          <Typography color="text.secondary" sx={{ mb: 4 }}>Send us a message on WhatsApp and we will respond within 1 hour.</Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            size="large"
-            href={buildWhatsAppLink('Hi! I have a question about StudyAI.')}
-            target="_blank"
-            rel="noopener"
-          >
-            Contact Us on WhatsApp
+          <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>Want to go deeper?</Typography>
+          <Typography color="text.secondary" sx={{ mb: 4 }}>Our free study guides explain each technique step by step, with examples and schedules.</Typography>
+          <Button variant="contained" color="secondary" size="large" component="a" href="/blog/">
+            Read the Study Guides
           </Button>
         </Container>
       </Box>

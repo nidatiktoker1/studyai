@@ -13,15 +13,11 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
 import SchoolIcon from '@mui/icons-material/School'
-import { buildWhatsAppLink } from '../data'
 
 const navLinks = [
   { label: 'Home', path: '/' },
-  { label: 'Services', path: '/services' },
-  { label: 'Demos', path: '/demos' },
-  { label: 'Pricing', path: '/pricing' },
   { label: 'FAQ', path: '/faq' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Write for Us', path: '/contact' },
 ]
 
 export default function Navbar() {
@@ -39,7 +35,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const orderMsg = 'Hi! I want to order study materials from StudyAI. Please send me the details.';
 
   const drawer = (
     <Box sx={{ width: 260, bgcolor: 'background.paper', height: '100%' }}>
@@ -52,8 +47,8 @@ export default function Navbar() {
           </ListItem>
         ))}
         <ListItem disablePadding>
-          <ListItemButton component="a" href={buildWhatsAppLink(orderMsg)} target="_blank" rel="noopener">
-            <ListItemText primary="Order Now" sx={{ color: 'secondary.main' }} />
+          <ListItemButton component="a" href="/blog/">
+            <ListItemText primary="Study Guides" sx={{ color: 'secondary.main' }} />
           </ListItemButton>
         </ListItem>
       </List>
@@ -98,12 +93,11 @@ export default function Navbar() {
             <Button
               variant="contained"
               color="secondary"
-              href={buildWhatsAppLink(orderMsg)}
-              target="_blank"
-              rel="noopener"
+              component="a"
+              href="/blog/"
               sx={{ ml: 1 }}
             >
-              Order Now
+              Study Guides
             </Button>
           </Box>
           <IconButton
