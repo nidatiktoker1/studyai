@@ -52,6 +52,16 @@ export default function Contact() {
           </Typography>
         </Card>
 
+        <Card sx={{ p: { xs: 3, md: 4 }, mb: 4, border: '1px solid', borderColor: 'rgba(108,99,255,0.15)' }}>
+          <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>The standard we publish at</Typography>
+          <Typography color="text.secondary" sx={{ mb: 1 }}>
+            Every guide on StudyAI is practical, specific and free of fluff. Before pitching, read the guides readers use most:
+            our <a href="/blog/cornell-notes/">Cornell notes guide</a>, the <a href="/blog/cornell-notes-template/">Cornell notes template</a> and
+            the <a href="/blog/spaced-repetition/">spaced repetition guide</a>. If your idea helps a student or teacher do
+            something concrete — a method, a template, a worked example — it belongs here.
+          </Typography>
+        </Card>
+
         <Box sx={{ textAlign: 'center', mt: 6 }}>
           <Button variant="contained" color="primary" size="large" component="a" href="/blog/" endIcon={<ArrowForwardIcon />}>
             Read the Study Guides

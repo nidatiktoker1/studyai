@@ -14,6 +14,11 @@ const guides = [
   { slug: 'how-to-make-flashcards', tag: 'Flashcards', title: 'How to Make Flashcards That Actually Work', desc: 'Ten rules for cards that test real recall — one idea per card, question-first design, honest grading.' },
   { slug: 'feynman-technique', tag: 'Study Techniques', title: 'The Feynman Technique: Learn Anything in 4 Steps', desc: 'Teach it simply or you do not know it: the four steps, a worked example, and when to use it.' },
   { slug: 'cornell-notes', tag: 'Note-Taking', title: 'Cornell Notes: The Method Explained', desc: 'The page layout that turns your notes into a self-test, the 5 Rs, and a worked example.' },
+  { slug: 'cornell-notes-template', tag: 'Note-Taking', title: 'Cornell Notes Template — Free PDF, Word & Google Docs', desc: 'The blank Cornell page, ready to print or copy: authentic cue column, notes area and summary box.' },
+  { slug: 'what-are-cornell-notes', tag: 'Note-Taking', title: 'What Are Cornell Notes? Definition, Layout & Why They Work', desc: 'The two-minute answer: what the format is, what each section does, and when it beats regular notes.' },
+  { slug: 'how-to-take-cornell-notes', tag: 'Note-Taking', title: 'How to Take Cornell Notes: A Step-by-Step Guide', desc: 'Set up, record, reduce to cues, summarise, then revise by self-testing — the full routine with examples.' },
+  { slug: 'cornell-notes-example', tag: 'Note-Taking', title: 'Cornell Notes Example: 3 Filled-In Pages', desc: 'What a finished page looks like — biology, history and maths, with real cues, notes and summaries.' },
+  { slug: 'study-schedule-template', tag: 'Planning', title: 'Study Schedule Template — Free Printable Weekly Timetable', desc: 'A realistic weekly timetable you print and fill in by hand — plus the five rules that make it stick.' },
 ]
 
 const principles = [
